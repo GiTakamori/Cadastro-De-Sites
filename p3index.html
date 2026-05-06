@@ -1,0 +1,213 @@
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 20px;
+    margin: 0;
+}
+
+/* form principal (agora dentro de section no HTML) */
+form {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    width: 400px;
+    transition: transform 0.5s ease;
+}
+
+form:hover {
+    transform: translateY(-5px);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+input[type="text"],
+textarea,
+select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 8px rgba(102, 126, 234, 0.5);
+    outline: none;
+}
+
+textarea {
+    resize: vertical;
+    height: 90px;
+}
+
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+/* botão principal do form */
+form > button[type="submit"] {
+    display: block;
+    width: 100%;
+    background-color: #667eea;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    margin-top: 25px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+form > button[type="submit"]:hover {
+    background-color: #5a67d8;
+    transform: scale(1.02);
+}
+
+form > button[type="submit"]:active {
+    transform: scale(0.98);
+}
+
+/* mensagem de feedback */
+#mensagem {
+    text-align: center;
+    margin-top: 15px;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 6px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.5s ease;
+}
+
+#mensagem.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#mensagem.sucesso {
+    background: #e6f9ec;
+    color: #2e7d32;
+}
+
+#mensagem.erro {
+    background: #fdecea;
+    color: #c62828;
+}
+
+/* histórico fixo */
+#historicoTemp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+/* card temporário */
+.card-temp {
+    background: #fff;
+    border-left: 5px solid #4caf50;
+    padding: 20px 15px 15px;
+    margin-top: 10px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    animation: aparecer 0.4s ease, fadeOut 0.5s ease 3.5s forwards;
+    position: relative;
+    width: 250px;
+}
+
+.card-temp button {
+    position: absolute;
+    top: 6px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    color: #666;
+}
+
+.card-temp button:hover {
+    color: #000;
+}
+
+/* navegação */
+.nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.nav-buttons button {
+    flex: 1;
+    padding: 10px;
+    background-color: #667eea;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.nav-buttons button:hover {
+    background-color: #5a67d8;
+    transform: translateY(-2px);
+}
+
+.nav-buttons button:active {
+    transform: scale(0.97);
+}
+
+/* animações */
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+}
+
+/* responsivo */
+@media (max-width: 520px) {
+    form {
+        width: 100%;
+        padding: 24px;
+    }
+}
