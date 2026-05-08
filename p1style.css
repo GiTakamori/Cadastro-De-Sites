@@ -21,7 +21,7 @@ main {
   min-height: 100vh;
 }
 
-/* agora é section.card (semântica nova) */
+
 .card {
   background: #fff;
   padding: 40px;
@@ -35,7 +35,7 @@ main {
   transform: translateY(-10px);
 }
 
-/* agora é header.sistema-titulo */
+
 .sistema-titulo h1 {
   text-align: center;
   color: #667eea;
@@ -66,7 +66,7 @@ textarea {
   background: #fff;
 }
 
-/* mantém efeito do label */
+
 input::placeholder,
 textarea::placeholder {
   color: transparent;
